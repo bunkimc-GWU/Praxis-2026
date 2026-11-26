@@ -1,6 +1,6 @@
 # A Hybrid HoQ-TOPSIS Decision Model for Selecting Sterile Injectable Drug Contract Manufacturers Under Cost-Time-Quality Uncertainty
 
-**Author:** B. Chokshi
+**Author:** Bunkim Girish Chokshi
 **Degree / Institution: DE, Engineering Management, George Washington University, 2026
 **Status:** Completed
 
@@ -12,11 +12,9 @@ This repository contains the R code used in the praxis analysis. The praxis deve
 - **TOPSIS** (Technique for Order of Preference by Similarity to Ideal Solution): ranks candidate CMOs by their relative closeness to an ideal solution.
 - **Uncertainty treatment:** Uses a Monte-Carlo Simulation to address changes in CTQ prefernces.
 
-
-
 # HoQ–TOPSIS pipeline in R
 
-R port of the analysis in **HOQ and TOPSIS 17.xlsm**: FDA inspection records → House of Quality weights → TOPSIS, plus the RQ1–RQ3 studies and the cross-validation (not used in praxis). Each module recomputes its stage and then compares its results with the values saved in the workbook; `outputs/reconciliation_checks.csv` lists every comparison with PASS/FAIL.
+R portion of the analysis: FDA inspection records → House of Quality weights → TOPSIS, plus the RQ1–RQ3 studies and the cross-validation (not used in praxis). Each module recomputes its stage and then compares its results with the values saved in the workbook; `outputs/reconciliation_checks.csv` lists every comparison with PASS/FAIL.
 
 ## Folder layout
 hoq_topsis_R/
@@ -32,14 +30,11 @@ hoq_topsis_R/
 - A C++ compiler for Rcpp: Rtools (Windows), Xcode command-line tools (macOS),  build-essential (Linux). Without one, an exact pure-R generator is used; that  is fine for everything except the RQ1 bootstrap, which then takes hours.
 
 ## Run
-1. Put "HOQ and TOPSIS 17.xlsm" in this folder (or set HOQ_WORKBOOK to its path).
-   Open it in Excel and save once first, so the saved formula values are current.
-2. In R: setwd("path/to/hoq_topsis_R"); source("run_all.R")
-   or from a terminal: Rscript run_all.R
+1. Put "HOQ and TOPSIS 17.xlsm" in this folder (or set HOQ_WORKBOOK to its path).  Open it in Excel and save once first, so the saved formula values are current.
+2. In R: setwd("path/to/hoq_topsis_R"); source("run_all.R") or from a terminal: Rscript run_all.R
    With Rcpp this takes a few minutes; the bootstrap is the slow step.
    Set SKIP_BOOTSTRAP=1 to skip it while testing.
-3. Results go to outputs/: one CSV per stage, results_summary.txt and
-   reconciliation_checks.csv.
+4. Results go to outputs/: one CSV per stage, results_summary.txt and reconciliation_checks.csv.
 
 ## Modules
 | File | Stage | Workbook tabs reproduced |
