@@ -30,15 +30,25 @@ R portion of the analysis: FDA inspection records → House of Quality weights �
 
 ## Modules
 | File | Stage | Workbook tabs reproduced |
+
 | R/00_utils.R | Settings, workbook reader, mulberry32, Box–Muller / Gamma / Beta / Dirichlet samplers, Excel-equivalent statistics, check log | Simulation Parameters | src/mulberry32.cpp | Fast generator, bootstrap counts, Fisher–Yates shuffle |
+
 | R/01_data_prep.R | FDA records → W01–W17 counts | FDA DATA, FDA Record Summary |
+
 | R/02_hoq.R | 14-step HoQ chain: base weights, CTQ fractions, CTQ-scaled weights | What Weights, HOQ, How HoQ Calculation Chain, CTQ Fractions & Scaled Weights |
+
 | R/03_topsis.R | TOPSIS engine, Kendall τ-a, Spearman | TOPSIS_HoQ, TOPSIS_Equal Weight, TOPSIS_CTQ Weight, Kendall |
+
 | R/04_rq1_bootstrap.R | RQ1/RH1 bootstrap (B = 10,000) and verdict | Bootstrap HoQ, RQ1 Findings |
+
 | R/05_scores.R | Two-stage Beta scores, χ² fit, firm-level check | Config, RH2 Score Distribution Fit |
+
 | R/06_rq2_pairs.R | RQ2/RH2: 780 pairs, paired tests, tier groups, anchor sensitivity, gap and 40-alternative spread | Pairwise Comparison Results, RQ2 Findings (4 tabs), Gap Distribution, RQ2 Spread 40-Alt |
+
 | R/07_rq3_ctq.R | RQ3/RH3: Dirichlet draws, triple sampling, stability, worked examples | RQ3 Tier 2 Sample, RQ3 Population Sample, five RH3 example tabs |
+
 | R/08_cv.R | Cross-validation: Train/Test split, weights, TOPSIS, summary panels | FDA DATA L:P, CV Inputs, CV Weights, CV TOPSIS, CV Summary |
+
 | run_all.R | Runs everything, writes the summary and the check log | — |
 
 ## Reproducing the workbook's random numbers
@@ -75,6 +85,7 @@ run_all.R and a README (dependencies, run order)
 - Microsoft Excel
 
 The data can be shared. It is not confidential or proprietary.
+
 Chokshi, B. (2026). A Hybrid HoQ-TOPSIS Decision Model for Selecting Sterile Injectable Drug Contract Manufacturers Under Cost-Time-Quality Uncertainty. Praxis, George Washington University.
 
 All rights reserved.
